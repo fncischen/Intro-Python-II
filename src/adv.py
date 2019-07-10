@@ -64,18 +64,28 @@ while not key == "q":
 
 	if key == "n":
 
-		player.room = player.room.n_to
+		if player.room.n_to == None:
+			print("This movement is not allowed.")
+		else:
+			player.room = player.room.n_to
 
 	elif key == "s":
-
-		player.room = player.room.s_to
+		if player.room.s_to == None:
+			print("This movement is not allowed.")
+		else:
+			player.room = player.room.s_to
 
 	elif key == "e":
 
-		player.room = player.room.e_to
+		if player.room.e_to == None:
+			print("This movement is not allowed.")
+		else:
+			player.room = player.room.e_to
 
 	elif key == "w":
-
-		player.room = player.room.w_to
+		if player.room.w_to == None:
+			print("This movement is not allowed.")
+		else:
+			player.room = player.room.w_to
 
 
