@@ -55,7 +55,12 @@ player = Player("Current Player", room['outside'])
 key = None
 
 while not key == "q":
+	# sleep function // async await wait 3 seconds.
+
 	print("We are inside room:", player.room.name)
+
+	#sleep for x miliseconds to render next line. 
+
 	print("Room description:", player.room.description)
 
 	print("Type q if you wish to quit the game")
