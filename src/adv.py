@@ -54,9 +54,9 @@ player = Player("Current Player", room['outside'])
 
 key = None
 
-while not key == q:
-	print("We are inside room:", player[room])
-	print("Room description:", room[player[room]])
+while not key == "q":
+	print("We are inside room:", player.room.name)
+	print("Room description:", player.room.description)
 
 	print("Type q if you wish to quit the game")
 
