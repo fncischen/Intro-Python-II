@@ -64,18 +64,18 @@ while not key == "q":
 
 	if key == "n":
 
-		Player[room] = room[player.room].n_to
+		player.room = player.room.n_to
 
 	elif key == "s":
 
-		Player[room] = room[player.room].s_to
+		player.room = player.room.s_to
 
 	elif key == "e":
 
-		Player[room] = room[player.room].e_to
+		player.room = player.room.e_to
 
 	elif key == "w":
 
-		Player[room] = room[player.room].w_to
+		player.room = player.room.w_to
 
 
