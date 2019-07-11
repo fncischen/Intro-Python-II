@@ -61,36 +61,67 @@ while not key == "q":
 
 	#sleep for x miliseconds to render next line. 
 
-	print("Room description:", player.room.description)
+	print("Room description: ", player.room.description )
+
+	print("\n")
+
+	print("List of items in the room",  play.room.Items)
+
+	print("\n")
+
+	print("List of items that player in room", player.room.Items)
 
 	print("Type q if you wish to quit the game")
 
-	key = input("Type which direction, n (North), s (South), e (East) and w (West) to determine which room to enter")
+	key = input("Type which direction, n (North), s (South), e (East) and w (West) to determine which room to enter. Otherwise, type 'take [item name]' or 'drop [item name]' if you see a item you'd like to pick up").split(",")
 
-	if key == "n":
+	# how to split keys: 
 
-		if player.room.n_to == None:
-			print("This movement is not allowed.")
-		else:
-			player.room = player.room.n_to
+	if len(key) <= 1:
 
-	elif key == "s":
-		if player.room.s_to == None:
-			print("This movement is not allowed.")
-		else:
-			player.room = player.room.s_to
+		if key == "n":
 
-	elif key == "e":
-
-		if player.room.e_to == None:
-			print("This movement is not allowed.")
-		else:
-			player.room = player.room.e_to
-
-	elif key == "w":
-		if player.room.w_to == None:
-			print("This movement is not allowed.")
-		else:
-			player.room = player.room.w_to
+			if player.room.n_to == None:
+				print("This movement is not allowed.")
+			else:
+				player.room = player.room.n_to
 
 
+		elif key == "s":
+			if player.room.s_to == None:
+				print("This movement is not allowed.")
+			else:
+				player.room = player.room.s_to
+
+		elif key == "e":
+
+			if player.room.e_to == None:
+				print("This movement is not allowed.")
+			else:
+				player.room = player.room.e_to
+
+		elif key == "w":
+			if player.room.w_to == None:
+				print("This movement is not allowed.")
+			else:
+				player.room = player.room.w_to
+
+	else:
+
+		if key[0] == "take":
+
+			requestedItem = key[1]
+			if requestedItem not in player.room.Items:
+				print("This item does not exist in this list of items in the room")
+			else:
+				player.room.pickUpItem()
+
+		elif key[0] == "drop":
+
+			droppedItem = key[1]
+			if droppedItem not in player.Items:
+				print("This item does not exist in this list of items per player")
+			else:
+				player.room.addItem(droppedItem)
+				droppedItemIndex = player.Items.index(droppedItem)
+				player.Items.pop(droppedItemIndex)
