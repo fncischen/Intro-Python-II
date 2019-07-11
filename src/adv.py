@@ -80,6 +80,8 @@ while not key[0] == "q":
 
 	print("Type q if you wish to quit the game")
 
+	print("\n")
+
 	key = input("Type which direction, n (North), s (South), e (East) and w (West) to determine which room to enter. Otherwise, type 'take [item name]' or 'drop [item name]' if you see a item you'd like to pick up").split()
 	print("Key type", type(key))
 	# how to split keys: 
