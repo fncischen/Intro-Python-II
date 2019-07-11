@@ -11,6 +11,6 @@ class Room:
 		self.e_to = None
 		self.Items = []
 
-	def addItems(self, item):
+	def addItem(self, item):
 		self.Items.append(item)
 		print(self.Items)

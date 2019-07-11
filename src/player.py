@@ -7,7 +7,7 @@ class Player:
 		self.room = room 
 		self.Items = []
 
-	def pickUpItem(self, item, room):
+	def pickUpItem(self, item):
 		self.Items.append(item)
 		roomItemIndex = self.room.Items.index(item)
 		self.room.Items.pop(roomItemIndex)
